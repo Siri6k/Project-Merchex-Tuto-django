@@ -17,6 +17,9 @@ class Band(models.Model):
 	official_homepage = models.fields.URLField(null=True,
     	blank=True)
 	
+	def __str__(self):
+		return f'{self.name}'
+	
 class Listing(models.Model):
 	class Type(models.TextChoices):
 		Records = 'RC'
