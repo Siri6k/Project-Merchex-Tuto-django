@@ -26,7 +26,7 @@ class Listing(models.Model):
 		Clothing = 'CL'
 		Posters = 'PS'
 		Miscellaneous = 'Misc'
-		
+	title = models.fields.CharField(max_length=100)
 	description = models.fields.CharField(max_length=50)
 	sold = models.fields.BooleanField(default=False)
 	year = models.fields.IntegerField(null=True,
@@ -36,4 +36,4 @@ class Listing(models.Model):
 	band = models.ForeignKey(Band,
 								null=True, on_delete=models.SET_NULL)
 	def __str__(self):
-		return f'{self.description}'
+		return f'{self.title}'

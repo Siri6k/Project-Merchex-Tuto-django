@@ -8,6 +8,6 @@ class BandAdmin(admin.ModelAdmin):
 admin.site.register(Band, BandAdmin)
 
 class ListingAdmin(admin.ModelAdmin):
-    list__display = ('description', 'band')
+    list_display = ('title', 'band')
     
 admin.site.register(Listing, ListingAdmin)

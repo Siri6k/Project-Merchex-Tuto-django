@@ -1,0 +1,7 @@
+merchex/.project 
+.project 
+env/ 
+__pycache__/ 
+requirements.txt 
+db.sqlite3 
+.pydevproject 
