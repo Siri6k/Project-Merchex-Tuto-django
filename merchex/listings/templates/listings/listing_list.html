@@ -1,11 +1,11 @@
 {% extends 'listings/base.html' %}
 {% block content %}
 <h1>Hello la Mifa</h1>
-<h2>Mes groupes preferés sont:</h2>
+<h2>Voici les annonces</h2>
 	<ul>
-		{% for band in bands %}
+		{% for item in items %}
 			<li>
-				<a href="{% url 'band-detail' band.id %}">{{ band.name }}</a>
+				<a href="{% url 'listing-detail' item.id %}">{{ item.title }}</a>
 			</li>
 		{% endfor %}
 	</ul>
