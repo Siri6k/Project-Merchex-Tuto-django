@@ -1,6 +1,7 @@
 {% extends "listings/base.html" %}
 {% block content %}
 <h2>{{ item.title }}</h2>
+<a href="{% url 'listing-update' item.id %}">Modifier</a>
 <ul>
     <li>Type: {{ item.get_type_display }}</li>
     <li>Groupe: {{ item.band }}</li>

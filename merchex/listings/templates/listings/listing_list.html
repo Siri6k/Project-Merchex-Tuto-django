@@ -1,6 +1,7 @@
 {% extends 'listings/base.html' %}
 {% block content %}
 <h1>Hello la Mifa</h1>
+<a href="{% url 'listing-create' %}">Creer une nouvel annonce</a>
 <h2>Voici les annonces</h2>
 	<ul>
 		{% for item in items %}

@@ -4,3 +4,7 @@
 .errorlist{
 margin-bottom: -10px;
 }
+.detail-band {
+	display: flex;
+	justify-content: space-around;
+}
