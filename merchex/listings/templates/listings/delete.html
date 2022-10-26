@@ -1,0 +1,20 @@
+{% extends 'listings/base.html' %}
+{% block content %}
+{% if item.name %}
+<h1>Supprimer le groupe: {{ item.name }}</h1>
+{% else %}
+<h1>Supprimer l'annonce: {{ item.title }}</h1>
+{% endif %}
+<p>Etes-vous sur de vouloir supprimer
+	{% if item.name %}
+	le groupe: {{ item.name }}
+	{% else %}
+	l'annonce: {{ item.title }}
+	{% endif %}
+	 ?
+</p>
+<form action="." method="post">
+    {% csrf_token %}
+	<p></p><input type="submit" value="Supprimer" /></p>
+</form>
+{% endblock %}

@@ -15,6 +15,10 @@ urlpatterns = [
     #Modiffiez un groupe et une annonce sur le site
     path('bands/<int:band_id>/change/', views.band_update, name="band-update"),
     path('listings/<int:list_id>/change/', views.listing_update, name="listing-update"),
+    # effacer un objet de la base des données
+    path('bands/<int:band_id>/delete/', views.band_delete, name="band-delete"),
+    path('listings/<int:list_id>/delete/', views.listing_delete, name="listing-delete"),
+
     # contactez nous
     path('contact/', views.contact, name="contact-us"),
     path('about/', views.about, name="about-us"),

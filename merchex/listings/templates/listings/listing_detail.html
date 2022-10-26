@@ -1,7 +1,10 @@
 {% extends "listings/base.html" %}
 {% block content %}
 <h2>{{ item.title }}</h2>
-<a href="{% url 'listing-update' item.id %}">Modifier</a>
+<p>
+    <a href="{% url 'listing-update' item.id %}">Modifier</a>
+    <a href="{% url 'listing-delete' item.id %}">Supprimer</a>
+</p>
 <ul>
     <li>Type: {{ item.get_type_display }}</li>
     <li>Groupe: {{ item.band }}</li>
@@ -11,5 +14,5 @@
     <li> {{ item.description }}</li>
     {% endif %}
 </ul>
-<p><a href="{% url 'band-list' %}">Retour à tous les groupes</a></p>
+<p><a href="{% url 'listing-list' %}">Voir toutes les annonces</a></p>
 {% endblock %}

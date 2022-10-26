@@ -72,11 +72,30 @@ def listing_update(request, list_id):
                         instance=listing)
         if form.is_valid():
             form.save()
-            return  redirect('listing-detail', listing.id)
+            return redirect('listing-detail', listing.id)
     form = ListingForm(instance=listing)
-    return  render(request,
+    return render(request,
                    'listings/listing_update.html',
                    {'form': form})
+def band_delete(request, band_id):
+    band = Band.objects.get(id=band_id)
+    if request.method == 'POST':
+        band.delete()
+        return redirect('band-list')
+    return render(request,
+                   'listings/delete.html',
+                   {'item': band})
+
+def listing_delete(request, list_id):
+    list = Listing.objects.get(id=list_id)
+    if request.method == 'POST':
+        list.delete()
+        return redirect('listing-list')
+    return render(request,
+                   'listings/delete.html',
+                   {'item': list})
+
+
 def contact(request):
     if request.method == 'POST':
         form = ContactUsForm(request.POST)

@@ -3,7 +3,10 @@
 <div class="detail-band">
     <div>
 <h2>{{ band.name }}</h2>
-<a href="{% url 'band-update' band.id %}">Modifier</a>
+<p>
+    <a href="{% url 'band-update' band.id %}">Modifier</a>
+    <a href="{% url 'band-delete' band.id %}">Supprimer</a>
+</p>
 <ul>
     <li>Genre: {{ band.get_genre_display }}</li>
     <li>Année de formation : {{ band.year_formed }}</li>
