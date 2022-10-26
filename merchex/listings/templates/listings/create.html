@@ -1,0 +1,15 @@
+{% extends 'listings/base.html' %}
+{% block content %}
+{% if choice == 'band' %}
+<!-- Choisir quel formulaire affiché entre les groupes et les annonces -->
+<h1>Creation d'un groupe</h1>
+{% else %}
+<h1>Creation d'une annonce</h1>
+{% endif %}
+<!-- ####################### -->
+<form action="." method="post" novalidate>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Soumettre" />
+</form>
+{% endblock %}

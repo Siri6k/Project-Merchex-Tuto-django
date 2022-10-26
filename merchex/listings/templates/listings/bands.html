@@ -1,6 +1,12 @@
 {% extends 'listings/base.html' %}
 {% block content %}
 <h1>Hello la Mifa</h1>
+<nav>
+	<a href="{% url 'listing-list' %}">Annonces</a>
+	<a href="{% url 'contact-us' %}">contactez-nous</a>
+	<a href="{% url 'about-us' %}">A propos de nous</a>
+
+</nav>
 <h2>Mes groupes preferés sont:</h2>
 	<ul>
 		{% for band in bands %}
